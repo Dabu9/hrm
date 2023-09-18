@@ -74,6 +74,7 @@ export const setDynamicRoute = (menuList) => {
   router.addRoute(dynamicRoute) // addRoute()只负责添加路由，但不去重
 }
 
+// 全局前置守卫
 router.beforeEach((to, from, next) => {
   // 如果有匹配的路由，则直接跳转
   if (to.matched.length === 0) {
@@ -99,6 +100,7 @@ router.beforeEach((to, from, next) => {
         }
       })
     } else {
+      // 将用户重定向到登录页面
       next({ name: 'login' })
     }
   }

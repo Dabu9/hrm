@@ -5,6 +5,10 @@ module.exports = {
       '/dev': {
         // 请求前缀
         target: 'http://localhost:' + process.env.VUE_APP_PORT, pathRewrite: { '^/dev': '' }, changeOrigin: true // 用于控制请求头中的host值
+      },
+      '/dev1': {
+        // 请求前缀
+        target: 'http://localhost:' + 9123, pathRewrite: { '^/dev': '' }, changeOrigin: true // 用于控制请求头中的host值
       }
     }
   }
