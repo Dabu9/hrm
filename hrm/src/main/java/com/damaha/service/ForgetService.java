@@ -9,7 +9,9 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.damaha.dto.Response;
 import com.damaha.dto.ResponseDTO;
 import com.damaha.entity.Account;
-import com.damaha.mapper.ForgetMapper;
+import com.damaha.entity.Staff;
+import com.damaha.mapper.AccountMapper;
+import com.damaha.vo.StaffDeptVO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,17 +19,19 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 @Service
-public class ForgetService extends ServiceImpl<ForgetMapper, Account> {
+public class ForgetService extends ServiceImpl<AccountMapper, Account> {
     @Resource
     StaffService staffService;
     @Resource
-    ForgetMapper forgetMapper;
+    AccountMapper accountMapper;
     public ResponseDTO addForgetAccount(Account account){
-        Object data = staffService.findIdByName(account.getName()).getData();
-        if(data != null){
-            Integer id = (Integer) data;
-            if(forgetMapper.selectById(id)==null){
+        String para = account.getCode();
+        Staff staff = (Staff) staffService.findByCode(para).getData();
+        if(staff != null){
+            Integer id = staff.getId();
+            if(accountMapper.selectById(id)==null){
                 account.setId(id);
+                account.setName(staff.getName());
                 account.setIsForget(1);
 
                 // 将数据保存到数据库

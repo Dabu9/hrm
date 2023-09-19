@@ -17,6 +17,11 @@ public class Account {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
+    @ExcelColumn("账户名")
+    @ApiModelProperty("网站账户名")
+    @TableField("code")
+    private String code;
+
     @ExcelColumn("姓名")
     @ApiModelProperty("员工姓名")
     @TableField("name")

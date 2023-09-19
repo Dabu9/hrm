@@ -230,6 +230,7 @@ INSERT INTO `per_menu` VALUES (17, 'money', '财务管理', 's-finance\r\n', '/m
 INSERT INTO `per_menu` VALUES (18, 'city', '参保城市', 'coordinate\r\n', '/city', 17, NULL, '2022-03-22 18:27:13', '2022-03-23 16:30:34', 0);
 INSERT INTO `per_menu` VALUES (19, 'leave', '请假审批', 'suitcase', '/leave', 14, NULL, '2022-03-26 09:40:15', '2022-04-06 06:21:07', 0);
 INSERT INTO `per_menu` VALUES (20, 'performance', '考勤表现', 'reading', '/performance', 14, NULL, '2022-03-26 09:46:24', '2022-03-26 09:47:41', 0);
+INSERT INTO `per_menu` VALUES (21, 'account', '账户管理', 's-custom', '/account', 5, NULL, '2023-09-19 16:50:24', '2023-09-19 16:50:24', 0);
 
 -- ----------------------------
 -- Table structure for per_role
@@ -688,15 +689,18 @@ INSERT INTO `sys_staff` VALUES (35, 'staff_35', '王五', 0, '827CE7BA16891F84CB
 INSERT INTO `sys_staff` VALUES (36, 'staff_36', 'harden', 0, '202CB7007152D234B962AC59075B964B', 'avatar.png', NULL, NULL, NULL, NULL, 13, 1, '2022-12-28 21:18:12', '2023-01-09 23:04:33', 0);
 INSERT INTO `sys_staff` VALUES (37, 'staff_37', '李云龙', 0, '202CB7007152D234B962AC59075B964B', 'avatar.png', '1989-07-12', '13990839927', '平安县', '独立团团长', 19, 1, '2023-01-09 22:58:36', '2023-02-15 09:55:00', 0);
 
-SET FOREIGN_KEY_CHECKS = 1;
-
 -- ----------------------------
 -- Table structure for acc_mgt
 -- ----------------------------
 DROP TABLE IF EXISTS `acc_mgt`;
 CREATE TABLE `acc_mgt`  (
     `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '员工id',
+    `code` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '员工编码',
     `name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '员工姓名',
     `is_forget` tinyint(4) UNSIGNED NOT NULL DEFAULT 0 COMMENT '是否需要重置密码，0无需，1需要重置',
     PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '账户管理' ROW_FORMAT = Dynamic;
+
+
+
+SET FOREIGN_KEY_CHECKS = 1;

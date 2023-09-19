@@ -250,10 +250,10 @@ public class StaffService extends ServiceImpl<StaffMapper, Staff> {
         return Response.error();
     }
 
-    public ResponseDTO findIdByName(String name){
-        Integer id = staffMapper.findIdByName(name);
-        if(id != null){
-            return Response.success(id);
+    public ResponseDTO findByCode(String name){
+        Staff staff = staffMapper.findByCode(name);
+        if(staff != null){
+            return Response.success(staff);
         }
         return Response.error();
     }
