@@ -249,4 +249,12 @@ public class StaffService extends ServiceImpl<StaffMapper, Staff> {
         }
         return Response.error();
     }
+
+    public ResponseDTO findIdByName(String name){
+        Integer id = staffMapper.findIdByName(name);
+        if(id != null){
+            return Response.success(id);
+        }
+        return Response.error();
+    }
 }

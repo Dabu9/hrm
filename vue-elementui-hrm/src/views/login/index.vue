@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div
-      style="margin: 130px auto; background-color: #fff; width:350px; height:300px;padding: 20px; border-radius:10px">
+      style="margin: 130px auto; background-color: #fff; width:350px; height:360px;padding: 20px; border-radius:10px">
       <div style="height: 60px; line-height: 60px; text-align: center">
         <img
           src="../../assets/logo.png"
@@ -23,7 +23,10 @@
         </el-form-item>
         <div style="margin: 20px 0; text-align: center">
           <el-form-item>
-            <el-button type="primary" size="medium" style="width:100%" @click="handleLogin">登 录</el-button>
+            <el-button type="primary" size="center" style="width:100%" @click="handleLogin">登 录</el-button>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" size="center" style="width:100%" @click="forgivePsd">重置密码</el-button>
           </el-form-item>
         </div>
       </el-form>
@@ -73,6 +76,11 @@ export default {
           return false
         }
       })
+    },
+    forgivePsd () {
+      this.$router.push({
+                  path: '/forget'
+                })
     }
   }
 }

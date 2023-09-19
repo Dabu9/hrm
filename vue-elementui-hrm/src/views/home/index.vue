@@ -4,7 +4,6 @@
       <el-col :span="8" style="margin-top: 20px">
         <el-card shadow="hover">
           <div class="user">
-
             <el-upload style="margin-bottom: -120px;margin-right: -10px"
                        :action="uploadApi" :headers="headers" :show-file-list="false" :multiple="false"
                        :on-success="handleUploadSuccess"

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <router-view />
     <!-- 加载路由视图 -->
+    <router-view/>
   </div>
 </template>
 <script>

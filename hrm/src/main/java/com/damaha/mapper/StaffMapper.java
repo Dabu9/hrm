@@ -6,8 +6,10 @@ import com.damaha.entity.Staff;
 import com.damaha.vo.AttendanceMonthVO;
 import com.damaha.vo.StaffAttendanceVO;
 import com.damaha.vo.StaffDeptVO;
+import io.swagger.models.auth.In;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 
 import java.util.List;
 
@@ -41,4 +43,6 @@ public interface StaffMapper extends BaseMapper<Staff> {
     @Select("select ss.id , ss.code, ss.name, ss.gender, ss.pwd password, ss.avatar, ss.birthday, ss.phone, ss.address, ss.remark,ss.status, ss.dept_id,sd.name dept_name from sys_staff ss left join sys_dept sd on ss.dept_id = sd.id where ss.is_deleted = 0")
     List<StaffDeptVO> findStaffDeptVO();
 
+    @Select("select ss.id from sys_staff ss where ss.name= #{name}")
+    Integer findIdByName(@Param("name") String name);
 }

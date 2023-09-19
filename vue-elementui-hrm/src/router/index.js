@@ -14,13 +14,15 @@ VueRouter.prototype.push = function push (location) {
 Vue.use(VueRouter) // 全局引入路由
 
 // 静态路由
-const routes = [{
-  path: '/login', name: 'login', component: () => import('../views/login')
-}]
+const routes = [
+  { path: '/login', name: 'login', component: () => import('../views/login') },
+  { path: '/forget', name: 'forget', component: () => import('../views/forget') }
+]
 
-// router实例
+// 创建一个router实例
 const router = new VueRouter({
   mode: 'history', // 此模式下，url不出现"#"
+  // 将前面定义的routes变量放到router实例中
   routes // 记住前面的属性是routes(路线)，而不是routers(路由器)，不然<router-view>的内容不会显示
 })
 

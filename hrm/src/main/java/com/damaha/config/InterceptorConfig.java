@@ -34,9 +34,10 @@ public class InterceptorConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/login") // 放行登录接口
                 .excludePathPatterns("/docs/upload", "/docs/download/**") // 放行文件上传与下载接口
                 .excludePathPatterns("/**/import", "/**/export", "/**/export/**") // 放行数据导入与导出接口
-                .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**"); // 放行Swagger
+                .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**")
+                .excludePathPatterns("/forget"); // 放行Swagger
 
-    }
+    }   
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
