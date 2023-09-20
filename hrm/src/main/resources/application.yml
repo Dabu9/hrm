@@ -1,7 +1,7 @@
 #dev在本地，prod部署
 spring:
   profiles:
-    active: dev
+    active: prod
 
 
 

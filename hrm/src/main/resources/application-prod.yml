@@ -4,7 +4,7 @@ server:
 spring:
   # 配置数据源
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/hrm?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2b8
+    url: jdbc:mysql://106.55.99.240:3306/hrm?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2b8
     username: root
     password: 1948614228
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -23,7 +23,7 @@ mybatis-plus:
 
 file:
   upload:
-    path: D:/Jave_Prj/hrm/file # 文件存储位置
+    path: /root/hrm/file # 文件存储位置
 
 
 
