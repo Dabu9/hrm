@@ -1,0 +1,17 @@
+version: '1'
+services:
+  #授权服务
+  vue-elementui-hrm:
+    image: registry.cn-chengdu.aliyuncs.com/damaha/vue-elementui-hrm
+    container_name: vue-hrm
+    restart: always
+    ports:
+      - 8362:80
+    networks:
+      - hrm
+    environment:
+      - COMPOSE_PROJECT_NAME=vue_hrm
+
+networks:
+  hrm:
+    external: true

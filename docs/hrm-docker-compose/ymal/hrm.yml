@@ -1,0 +1,17 @@
+version: '1'
+services:
+  #授权服务
+  hrm:
+    image: registry.cn-chengdu.aliyuncs.com/damaha/hrm
+    container_name: hrm
+    restart: always
+    ports:
+      - 8361:8361
+    networks:
+      - hrm
+    environment:
+      - COMPOSE_PROJECT_NAME=hrm
+
+networks:
+  hrm:
+    external: true
