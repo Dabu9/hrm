@@ -32,7 +32,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo()) // 用于生成API信息
                 .enable(true) // 如果为false,则不启动swagger
                 .select() // select()函数返回一个ApiSelectorBuilder实例,用来控制接口被swagger做成文档
-                .apis(RequestHandlerSelectors.basePackage("com.qiujie.controller")) // 用于指定扫描哪个包下的接口
+                .apis(RequestHandlerSelectors.basePackage("com.damaha.controller")) // 用于指定扫描哪个包下的接口
                 /**
                  * RequestHandlerSelectors: 配置要扫描的包
                  * any(): 扫描全部

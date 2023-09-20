@@ -93,7 +93,7 @@ export default {
             }
         })    
     },
-    handleSizeChange (size) {
+    handleSi4eChange (size) {
       this.table.pageConfig.size = size
       this.loading()
     },

@@ -79,8 +79,8 @@ export default {
     },
     forgivePsd () {
       this.$router.push({
-                  path: '/forget'
-                })
+        path: '/forget'
+      })
     }
   }
 }
